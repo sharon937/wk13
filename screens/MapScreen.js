@@ -9,6 +9,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import { getUbikeInfo } from '../api';
 import metroJson from "../json/metro.json";
 import ActionButton from '../components/ActionButton';
+import mapStyle from '../mapStyles/mapStyle.json'
+import blackMapStyle from'../mapStyles/blackMapStyle.json';
 
 export default function MapScreen() {
    const [msg, setMsg] = useState("Waiting...");
@@ -87,6 +89,8 @@ export default function MapScreen() {
             initialRegion={region}
             style={{ flex: 1 }}
             showsTraffic
+            provider='google'
+            customMapStyle={mapStyle}
             onRegionChangeComplete={onRegionChangeComplete}
          >
             {(zoomRatio > 0.14) && metro.map((site) => (
