@@ -10,8 +10,8 @@ export default (props) => {
   return (
     <>
       <Pressable onPress={onOpen}>
-        <Center bg="white" borderRadius={60} p={3 * zoomRatio} borderWidth={2 * zoomRatio} borderColor="black">
-          <Icon name={"bicycle"} size={30 * zoomRatio} color="black" />
+        <Center bg="white" borderRadius={60} p={3 * zoomRatio} borderWidth={2 * zoomRatio} borderColor="white">
+          <Icon name={"bicycle"} size={24 * zoomRatio} color="skyblue" />
         </Center>
       </Pressable>
       <Actionsheet isOpen={isOpen} onClose={onClose}>

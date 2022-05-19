@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import MapView, { Marker } from 'react-native-maps';
+import { Marker } from 'react-native-maps';
+import MapView from 'react-native-map-clustering'
 import { Platform } from "react-native";
 import { Box, Center } from 'native-base';
 import * as Location from 'expo-location';
@@ -10,7 +11,6 @@ import { getUbikeInfo } from '../api';
 import metroJson from "../json/metro.json";
 import ActionButton from '../components/ActionButton';
 import mapStyle from '../mapStyles/mapStyle.json'
-import blackMapStyle from'../mapStyles/blackMapStyle.json';
 
 export default function MapScreen() {
    const [msg, setMsg] = useState("Waiting...");
@@ -89,8 +89,6 @@ export default function MapScreen() {
             initialRegion={region}
             style={{ flex: 1 }}
             showsTraffic
-            provider='google'
-            customMapStyle={mapStyle}
             onRegionChangeComplete={onRegionChangeComplete}
          >
             {(zoomRatio > 0.14) && metro.map((site) => (
@@ -100,8 +98,8 @@ export default function MapScreen() {
                   title={site.name}
                   description={site.address}
                >
-                  <Center bg="white" borderRadius={60} p={3 * zoomRatio} borderWidth={2 * zoomRatio} borderColor="black">
-                     <Icon name={"bus"} size={30 * zoomRatio} color="black" />
+                  <Center bg="white" borderRadius={60} p={3 * zoomRatio} borderWidth={2 * zoomRatio} borderColor="white">
+                     <Icon name={"train"} size={30 * zoomRatio} color="pink" />
                   </Center>
                </Marker>
             ))}

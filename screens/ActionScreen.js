@@ -22,11 +22,11 @@ const ActionScreen = ({ onClose, site }) => {
    const getTime = (m) => {
       const mday = String(m);
       const year = mday.slice(0, 4);
-      const month = Number(mday.slice(4, 6));
-      const date = Number(mday.slice(6, 8));
-      const hour = Number(mday.slice(8, 10));
-      const min = Number(mday.slice(10, 12));
-      const sec = Number(mday.slice(12));
+      const month = Number(mday.slice(6, 7));
+      const date = Number(mday.slice(8, 10));
+      const hour = Number(mday.slice(11, 13));
+      const min = Number(mday.slice(14, 16));
+      const sec = Number(mday.slice(17,19));
       const time = `${year}/${month}/${date} ${hour}:${min}:${sec}`;
       return time;
    }
